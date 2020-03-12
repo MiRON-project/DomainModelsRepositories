@@ -22,6 +22,12 @@ ServiceDefRepository CommObjectRecognitionObjects version 1.0 {
 		> 
 	}
 	
+	ForkingServiceDefinition ObjectPushService {
+		PushPattern <
+			DataType = CommObjectRecognitionObjects.CommObjectRecognitionObjectProperties
+		>
+	}
+	
 	CoordinationServiceDefinition ObjectRecognitionCoordinationService {
 		ParameterPattern < CommObjectRecognitionObjects.ObjectRecognitionParameter >
 		StatePattern < lifecycle ComponentLifecycle with CommObjectRecognitionObjects.DefaultModes >
