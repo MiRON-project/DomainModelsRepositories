@@ -97,6 +97,11 @@ ServiceDefRepository CommBasicObjects version 1.0
 		>
 	}
 	
+	ForkingServiceDefinition BatteryPushService{
+		PushPattern <DataType= CommBasicObjects.CommBatteryLevel
+		>
+	}
+	
 
 	ForkingServiceDefinition LaserSafetyEventService {
 		EventPattern < 
