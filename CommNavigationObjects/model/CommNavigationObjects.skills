@@ -54,7 +54,7 @@ SkillDefinitionRepository CommNavigationObjects {
 		
 		SkillDefinition loadNavigationMap {
 			in {
-				map : String
+				mapname : String
 			}
 			results {
 				SUCCESS value = "OK"
