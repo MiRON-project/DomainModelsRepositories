@@ -2,3 +2,4 @@ build/
 bin/
 Debug/
 .settings/
+src-gen/
