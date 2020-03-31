@@ -34,4 +34,17 @@ ServiceDefRepository CommObjectRecognitionObjects version 1.0 {
 		CommunicationServiceUsage objectquery uses ObjectQueryService
 		CommunicationServiceUsage objectrecognitionevent uses ObjectEventService 
 	}
+	
+	RequestAnswerServiceDefinition PersonRecognitionQueryService {
+		QueryPattern <
+			RequestType = CommBasicObjects.CommVoid
+			AnswerType = CommObjectRecognitionObjects.CommPerson
+		>
+	}
+	
+	ForkingServiceDefinition PersonPushService {
+		PushPattern <
+			DataType = CommObjectRecognitionObjects.CommPerson
+		>
+	}
 }

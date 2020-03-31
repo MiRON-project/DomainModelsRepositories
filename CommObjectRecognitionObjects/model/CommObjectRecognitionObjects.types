@@ -35,6 +35,7 @@ CommObjectsRepository CommObjectRecognitionObjects version 1.0 {
 		 * "Used for grasping at an surface of the object"
 		 */
 		objectSurfacePoses : CommPose3d[*]
+		object_colors : CommObjectDominantColor[*]
 	}
 	
 	CommObject CommObjectRecognitionEnvironment {
@@ -105,6 +106,20 @@ CommObjectsRepository CommObjectRecognitionObjects version 1.0 {
 	CommObject CommObjectRelation {
 		type: RelationType
 		relatedObjectId: UInt32
+	}
+	
+	CommObject CommObjectDominantColor {
+		r: Double
+		g: Double
+		b: Double
+		dominance: Double
+	}
+	
+	CommObject CommPerson {
+		id: Int32
+		name: String
+		data_keys: String[*]
+		data_values: Double[*]
 	}
 	
 }
