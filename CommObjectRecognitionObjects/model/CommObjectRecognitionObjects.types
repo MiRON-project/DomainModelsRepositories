@@ -116,8 +116,11 @@ CommObjectsRepository CommObjectRecognitionObjects version 1.0 {
 	}
 	
 	CommObject CommPerson {
+		is_valid: Boolean= false
 		id: Int32
 		name: String
+		pose: CommPose3d
+		dimension: CommPosition3d
 		data_keys: String[*]
 		data_values: Double[*]
 	}
