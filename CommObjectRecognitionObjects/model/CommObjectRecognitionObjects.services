@@ -53,4 +53,10 @@ ServiceDefRepository CommObjectRecognitionObjects version 1.0 {
 			DataType = CommObjectRecognitionObjects.CommPerson
 		>
 	}
+	
+	ForkingServiceDefinition PeoplePushService {
+		PushPattern <
+			DataType = CommObjectRecognitionObjects.CommPeople
+		>
+	}
 }
