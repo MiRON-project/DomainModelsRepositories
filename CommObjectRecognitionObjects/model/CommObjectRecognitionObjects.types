@@ -17,6 +17,11 @@ CommObjectsRepository CommObjectRecognitionObjects version 1.0 {
 		id: UInt32
 	}
 	
+	CommObject CommPersonRecognitionId {
+		id: UInt32
+		name: String
+	}
+	
 	CommObject CommSimpleObjectEventParameter {
 		oldState: SimpleObjectState
 	}
