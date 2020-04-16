@@ -14,14 +14,22 @@ ServiceDefRepository CommObjectRecognitionObjects version 1.0 {
 		>
 	}
 	
-	RequestAnswerServiceDefinition PeopleQueryService {
+	RequestAnswerServiceDefinition PersonQueryService {
 		QueryPattern <
-			RequestType = CommBasicObjects.CommVoid
-			AnswerType = CommObjectRecognitionObjects.CommPeople
+			RequestType = CommObjectRecognitionObjects.CommPersonRecognitionId
+			AnswerType = CommObjectRecognitionObjects.CommPerson
 		>
 	}
 	
 	ForkingServiceDefinition ObjectEventService {
+		EventPattern < 
+			ActivationType=CommBasicObjects.CommVoid
+			EventType=CommObjectRecognitionObjects.CommObjectRecognitionEventResult
+			EventStateType=CommObjectRecognitionObjects.CommObjectRecognitionEventState
+		> 
+	}
+	
+	ForkingServiceDefinition PeopleEventService {
 		EventPattern < 
 			ActivationType=CommBasicObjects.CommVoid
 			EventType=CommObjectRecognitionObjects.CommObjectRecognitionEventResult
@@ -45,8 +53,9 @@ ServiceDefRepository CommObjectRecognitionObjects version 1.0 {
 		ParameterPattern < CommObjectRecognitionObjects.ObjectRecognitionParameter >
 		StatePattern < lifecycle ComponentLifecycle with CommObjectRecognitionObjects.DefaultModes >
 		CommunicationServiceUsage objectquery uses ObjectQueryService
-		CommunicationServiceUsage objectrecognitionevent uses ObjectEventService 
-		CommunicationServiceUsage peopleState uses PeopleQueryService
+		CommunicationServiceUsage objectrecognitionevent uses ObjectEventService
+		CommunicationServiceUsage peoplerecognitionevent uses PeopleEventService 
+		CommunicationServiceUsage personquery uses PersonQueryService
 	}
 	
 	ForkingServiceDefinition PersonPushService {

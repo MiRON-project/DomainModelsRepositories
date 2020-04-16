@@ -7,18 +7,15 @@ SkillDefinitionRepository CommObjectRecognitionObjects {
 			}
 		}
 		
-		SkillDefinition getPeople {
+		SkillDefinition getPeoplePose {
 			out {
-				number_of_people: Int32
-				id : Int32[*]
-				name : String[*]
 				x : Double[*]
 				y : Double[*]
 				z : Double[*]
 			}
 			results {
 				SUCCESS value = "OK"
-				ERROR value = "FAILURE"
+				ERROR value = "0"
 			}
 		}
 		
