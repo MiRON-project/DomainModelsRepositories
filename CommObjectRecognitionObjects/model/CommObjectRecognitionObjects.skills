@@ -7,11 +7,18 @@ SkillDefinitionRepository CommObjectRecognitionObjects {
 			}
 		}
 		
-		SkillDefinition getPeoplePose {
+		SkillDefinition peoplerecognition{
+			results {
+				SUCCESS value = "OK"
+				ERROR value = "0"
+			}
+		}
+		
+		SkillDefinition getPersonPose {
 			out {
-				x : Double[*]
-				y : Double[*]
-				z : Double[*]
+				x : Double
+				y : Double
+				z : Double
 			}
 			results {
 				SUCCESS value = "OK"
