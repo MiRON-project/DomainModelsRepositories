@@ -1,6 +1,6 @@
-#include "ObjectRecognitionCoordinationServicePeoplerecognitioneventEventHandler.hh"
+#include "PersonRecognitionCoordinationServicePeoplerecognitioneventEventHandler.hh"
 
-std::string ObjectRecognitionCoordinationServicePeoplerecognitioneventEventHandler::handleEvent(const CommObjectRecognitionObjects::CommObjectRecognitionEventResult &r) throw() {
+std::string PersonRecognitionCoordinationServicePeoplerecognitioneventEventHandler::handleEvent(const CommObjectRecognitionObjects::CommObjectRecognitionEventResult &r) throw() {
 	
 	std::string outString;
 	int numberOfObjects;
@@ -17,7 +17,7 @@ std::string ObjectRecognitionCoordinationServicePeoplerecognitioneventEventHandl
 	return outString;
 }
 
-CommBasicObjects::CommVoid ObjectRecognitionCoordinationServicePeoplerecognitioneventEventHandler::activateEventParam(const std::string& parameterString){
+CommBasicObjects::CommVoid PersonRecognitionCoordinationServicePeoplerecognitioneventEventHandler::activateEventParam(const std::string& parameterString){
 	CommBasicObjects::CommVoid param;
 	
 	//fill the event activation (parameter) commObject with the data provided via the inString (from TCL)

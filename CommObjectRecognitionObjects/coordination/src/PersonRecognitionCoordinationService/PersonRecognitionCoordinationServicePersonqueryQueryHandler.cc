@@ -1,6 +1,6 @@
-#include "ObjectRecognitionCoordinationServicePersonqueryQueryHandler.hh"
+#include "PersonRecognitionCoordinationServicePersonqueryQueryHandler.hh"
   
-CommObjectRecognitionObjects::CommPersonRecognitionId ObjectRecognitionCoordinationServicePersonqueryQueryHandler::handleRequest(const std::string& inString){
+CommObjectRecognitionObjects::CommPersonRecognitionId PersonRecognitionCoordinationServicePersonqueryQueryHandler::handleRequest(const std::string& inString){
 
 	CommObjectRecognitionObjects::CommPersonRecognitionId request;
 	if(!inString.empty() && inString.find_first_not_of("0123456789") == 
@@ -11,7 +11,7 @@ CommObjectRecognitionObjects::CommPersonRecognitionId ObjectRecognitionCoordinat
 	return request;
 }
 
-std::string ObjectRecognitionCoordinationServicePersonqueryQueryHandler::handleAnswer(const CommObjectRecognitionObjects::CommPerson& answer){
+std::string PersonRecognitionCoordinationServicePersonqueryQueryHandler::handleAnswer(const CommObjectRecognitionObjects::CommPerson& answer){
 	
 	std::ostringstream ss;
 	ss << "(";
