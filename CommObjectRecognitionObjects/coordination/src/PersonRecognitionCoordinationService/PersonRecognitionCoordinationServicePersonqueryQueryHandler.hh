@@ -1,15 +1,15 @@
-#ifndef _OBJECTRECOGNITIONCOORDINATIONSERVICEPERSONQUERYQUERYHANDLER_HH_
-#define _OBJECTRECOGNITIONCOORDINATIONSERVICEPERSONQUERYQUERYHANDLER_HH_
+#ifndef _PERSONRECOGNITIONCOORDINATIONSERVICEPERSONQUERYQUERYHANDLER_HH_
+#define _PERSONRECOGNITIONCOORDINATIONSERVICEPERSONQUERYQUERYHANDLER_HH_
 
 #include "CommObjectRecognitionObjects/CommPersonRecognitionId.hh"
 #include "CommObjectRecognitionObjects/CommPerson.hh"
 #include <string>
 
-class ObjectRecognitionCoordinationServicePersonqueryQueryHandler
+class PersonRecognitionCoordinationServicePersonqueryQueryHandler
 {
 public:
 
-	ObjectRecognitionCoordinationServicePersonqueryQueryHandler(){
+	PersonRecognitionCoordinationServicePersonqueryQueryHandler(){
 
 	}
 

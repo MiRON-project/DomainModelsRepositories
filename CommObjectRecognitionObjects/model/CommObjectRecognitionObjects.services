@@ -54,6 +54,11 @@ ServiceDefRepository CommObjectRecognitionObjects version 1.0 {
 		StatePattern < lifecycle ComponentLifecycle with CommObjectRecognitionObjects.DefaultModes >
 		CommunicationServiceUsage objectquery uses ObjectQueryService
 		CommunicationServiceUsage objectrecognitionevent uses ObjectEventService
+	}
+	
+	CoordinationServiceDefinition PersonRecognitionCoordinationService {
+		ParameterPattern < CommObjectRecognitionObjects.ObjectRecognitionParameter >
+		StatePattern < lifecycle ComponentLifecycle with CommObjectRecognitionObjects.DefaultModes >
 		CommunicationServiceUsage peoplerecognitionevent uses PeopleEventService 
 		CommunicationServiceUsage personquery uses PersonQueryService
 	}
