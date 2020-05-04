@@ -1,4 +1,8 @@
 #include "PersonRecognitionCoordinationServicePersonqueryQueryHandler.hh"
+
+#include <iostream>
+#include <string>
+#include <iomanip>
   
 CommObjectRecognitionObjects::CommPersonRecognitionId PersonRecognitionCoordinationServicePersonqueryQueryHandler::handleRequest(const std::string& inString){
 
@@ -8,6 +12,7 @@ CommObjectRecognitionObjects::CommPersonRecognitionId PersonRecognitionCoordinat
 		request.setId(std::stoi(inString));
 	else
 		request.setName(inString);
+	
 	return request;
 }
 
@@ -15,10 +20,11 @@ std::string PersonRecognitionCoordinationServicePersonqueryQueryHandler::handleA
 	
 	std::ostringstream ss;
 	ss << "(";
-	ss << answer.getId();
-	ss << answer.getName();
+	ss << answer.getId() << " ";
+	ss << answer.getName().c_str() << " ";
 	auto pose = answer.getPose();
-	ss << pose.get_x() << pose.get_y() << pose.get_z();
+	ss << std::fixed << std::setprecision(2) << pose.get_x() << " " 
+		<< pose.get_y() << " " << pose.get_z();
 	ss << ")";	
 	return ss.str();
 }
