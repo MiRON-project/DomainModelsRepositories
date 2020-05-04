@@ -3,13 +3,11 @@
 std::string PersonRecognitionCoordinationServicePeoplerecognitioneventEventHandler::handleEvent(const CommObjectRecognitionObjects::CommObjectRecognitionEventResult &r) throw() {
 	
 	std::string outString;
-	int numberOfObjects;
 	std::ostringstream eventState;
 
 	eventState << "(";
-
-	for (int i = 0; i < numberOfObjects; i++) {
-		eventState << " " << r.get_object_id(i);
+	for (size_t i = 0; i < r.getObject_idSize(); i++) {
+		eventState << " " << r.getObject_idElemAtPos(i);
 	}
 	eventState << ")";
 
