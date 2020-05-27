@@ -19,6 +19,11 @@ CommObjectsRepository CommObjectRecognitionObjects version 1.1 {
 		object_id: UInt32[*]
 	}
 	
+	CommObject CommObjectRecognitionEventBumpState {
+		state: ObjectBumpState
+		object_id: UInt32[*]
+	}
+	
 	CommObject CommObjectRecognitionId {
 		id: UInt32
 	}

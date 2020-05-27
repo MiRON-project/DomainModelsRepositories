@@ -45,6 +45,14 @@ ServiceDefRepository CommObjectRecognitionObjects version 1.0 {
 		> 
 	}
 	
+	ForkingServiceDefinition PeopleEventBump {
+		EventPattern < 
+			ActivationType=CommBasicObjects.CommVoid
+			EventType=CommObjectRecognitionObjects.CommObjectRecognitionEventBumpResult
+			EventStateType=CommObjectRecognitionObjects.CommObjectRecognitionEventBumpState
+		> 
+	}
+	
 	ForkingServiceDefinition ObjectPushService {
 		PushPattern <
 			DataType = CommObjectRecognitionObjects.CommObjectRecognitionObjectProperties
@@ -70,6 +78,7 @@ ServiceDefRepository CommObjectRecognitionObjects version 1.0 {
 		StatePattern < lifecycle ComponentLifecycle with CommObjectRecognitionObjects.DefaultModes >
 		CommunicationServiceUsage peoplerecognitionevent uses PeopleEventService 
 		CommunicationServiceUsage personquery uses PersonQueryService
+		CommunicationServiceUsage peoplerecognitionbumpevent uses PeopleEventBump
 	}
 	
 	ForkingServiceDefinition PersonPushService {
