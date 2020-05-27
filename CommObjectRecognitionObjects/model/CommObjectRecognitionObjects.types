@@ -30,6 +30,7 @@ CommObjectsRepository CommObjectRecognitionObjects version 1.0 {
 		is_valid: Boolean= false
 		object_id: UInt32
 		object_type: String
+		object_simple_type: SimpleObjects
 		pose: CommPose3d
 		dimension: CommPosition3d
 		beliefs: CommObjectBelief[*]
@@ -89,6 +90,13 @@ CommObjectsRepository CommObjectRecognitionObjects version 1.0 {
 		UNKOWN
 		OBJECT_FOUND
 		OBJECT_NOT_FOUND
+	}
+	
+	Enumeration SimpleObjects {
+		UNKOWN; SOFA; CHAIR; PORTRAIT; TABLE; BED; CAN; APPLE
+		GNOME; SWINGCOUCH; WATERINGCAN; BISCUITBOX; JAMJAR; ATM
+		BENCH; PUBLICBIN; SIMPLEBENCH; SNACKSTAND; TRASHBIN;
+		TRASHCONTAINER; PEDESTRIAN
 	}
 	
 	CommObject CommObjectBelief {
