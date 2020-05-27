@@ -1,6 +1,6 @@
 #import CommBasicObjects.*;
 
-CommObjectsRepository CommObjectRecognitionObjects version 1.0 {
+CommObjectsRepository CommObjectRecognitionObjects version 1.1 {
 	
 	CommObject CommObjectRecognitionEventResult {
 		state: ObjectRecognitionState
@@ -8,8 +8,19 @@ CommObjectsRepository CommObjectRecognitionObjects version 1.0 {
 		object_id: UInt32[*]
 	}
 	
+	CommObject CommObjectRecognitionEventBumpResult {
+		state: ObjectBumpState
+		environment_id: UInt32= 0
+		object_id: UInt32[*]
+	}
+	
 	CommObject CommObjectRecognitionEventState {
 		state: ObjectRecognitionState
+		object_id: UInt32[*]
+	}
+	
+	CommObject CommObjectRecognitionEventBumpState {
+		state: ObjectBumpState
 		object_id: UInt32[*]
 	}
 	
@@ -79,6 +90,11 @@ CommObjectsRepository CommObjectRecognitionObjects version 1.0 {
 		VISIBLE
 		INVISIBLE
 		FINISHED
+	}
+	
+	Enumeration ObjectBumpState {
+		BUMP
+		NOT_BUMP
 	}
 	
 	Enumeration RelationType {

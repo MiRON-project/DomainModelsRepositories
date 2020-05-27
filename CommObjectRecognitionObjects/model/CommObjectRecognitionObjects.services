@@ -29,11 +29,27 @@ ServiceDefRepository CommObjectRecognitionObjects version 1.0 {
 		> 
 	}
 	
+	ForkingServiceDefinition ObjectEventBump {
+		EventPattern < 
+			ActivationType=CommBasicObjects.CommVoid
+			EventType=CommObjectRecognitionObjects.CommObjectRecognitionEventBumpResult
+			EventStateType=CommObjectRecognitionObjects.CommObjectRecognitionEventBumpState
+		> 
+	}
+	
 	ForkingServiceDefinition PeopleEventService {
 		EventPattern < 
 			ActivationType=CommBasicObjects.CommVoid
 			EventType=CommObjectRecognitionObjects.CommObjectRecognitionEventResult
 			EventStateType=CommObjectRecognitionObjects.CommObjectRecognitionEventState
+		> 
+	}
+	
+	ForkingServiceDefinition PeopleEventBump {
+		EventPattern < 
+			ActivationType=CommBasicObjects.CommVoid
+			EventType=CommObjectRecognitionObjects.CommObjectRecognitionEventBumpResult
+			EventStateType=CommObjectRecognitionObjects.CommObjectRecognitionEventBumpState
 		> 
 	}
 	
@@ -54,6 +70,7 @@ ServiceDefRepository CommObjectRecognitionObjects version 1.0 {
 		StatePattern < lifecycle ComponentLifecycle with CommObjectRecognitionObjects.DefaultModes >
 		CommunicationServiceUsage objectquery uses ObjectQueryService
 		CommunicationServiceUsage objectrecognitionevent uses ObjectEventService
+		CommunicationServiceUsage objectrecognitionbumpevent uses ObjectEventBump
 	}
 	
 	CoordinationServiceDefinition PersonRecognitionCoordinationService {
@@ -61,6 +78,7 @@ ServiceDefRepository CommObjectRecognitionObjects version 1.0 {
 		StatePattern < lifecycle ComponentLifecycle with CommObjectRecognitionObjects.DefaultModes >
 		CommunicationServiceUsage peoplerecognitionevent uses PeopleEventService 
 		CommunicationServiceUsage personquery uses PersonQueryService
+		CommunicationServiceUsage peoplerecognitionbumpevent uses PeopleEventBump
 	}
 	
 	ForkingServiceDefinition PersonPushService {
