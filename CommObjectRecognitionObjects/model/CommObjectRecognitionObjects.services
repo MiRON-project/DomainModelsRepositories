@@ -53,6 +53,14 @@ ServiceDefRepository CommObjectRecognitionObjects version 1.0 {
 		> 
 	}
 	
+	ForkingServiceDefinition WantedPersonEvent {
+		EventPattern < 
+			ActivationType=CommBasicObjects.CommVoid
+			EventType=CommObjectRecognitionObjects.CommObjectRecognitionEventResult
+			EventStateType=CommObjectRecognitionObjects.CommObjectRecognitionEventState
+		> 
+	}
+	
 	ForkingServiceDefinition ObjectPushService {
 		PushPattern <
 			DataType = CommObjectRecognitionObjects.CommObjectRecognitionObjectProperties
