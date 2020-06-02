@@ -109,10 +109,14 @@ CommObjectsRepository CommObjectRecognitionObjects version 1.1 {
 	}
 	
 	Enumeration SimpleObjects {
-		UNKOWN; SOFA; CHAIR; PORTRAIT; TABLE; BED; CAN; APPLE
+		UNKOWN; PORTRAIT; BED; CAN; APPLE
 		GNOME; SWINGCOUCH; WATERINGCAN; BISCUITBOX; JAMJAR; ATM
 		BENCH; PUBLICBIN; SIMPLEBENCH; SNACKSTAND; TRASHBIN;
 		TRASHCONTAINER; PEDESTRIAN
+	}
+	
+	CommObject ObjectsSimpleRecognitionTypes {
+		types: SimpleObjects[*]
 	}
 	
 	CommObject CommObjectBelief {
