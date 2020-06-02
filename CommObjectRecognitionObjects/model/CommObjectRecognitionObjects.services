@@ -73,6 +73,12 @@ ServiceDefRepository CommObjectRecognitionObjects version 1.0 {
 		>
 	}
 	
+	ForkingServiceDefinition ObjectsSimpleRecognitionPushService {
+		PushPattern <
+			DataType = CommObjectRecognitionObjects.ObjectsSimpleRecognitionTypes
+		>
+	}
+	
 	CoordinationServiceDefinition ObjectRecognitionCoordinationService {
 		ParameterPattern < CommObjectRecognitionObjects.ObjectRecognitionParameter >
 		StatePattern < lifecycle ComponentLifecycle with CommObjectRecognitionObjects.DefaultModes >
