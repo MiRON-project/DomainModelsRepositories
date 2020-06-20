@@ -89,6 +89,10 @@ ServiceDefRepository CommBasicObjects version 1.0
 		>
 	}
 	
+	ForkingServiceDefinition SimpleBumperService {
+		PushPattern<DataType=CommBasicObjects.SimpleBumpState>
+	}
+	
 	ForkingServiceDefinition BatteryEventService{
 		EventPattern <
 			ActivationType = 	CommBasicObjects.CommBatteryParameter

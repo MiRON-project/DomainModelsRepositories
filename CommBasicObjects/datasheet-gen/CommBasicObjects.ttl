@@ -364,6 +364,12 @@
 	t1:memberOfRepository <http://www.servicerobotik-ulm.de/DomainModels/CommBasicObjects>;
 .
 
+:SimpleBumpState a robmosys:CommunicationObject;
+	rdfs:label "SimpleBumpState";
+	t1:shortDescription "CommunicationObject SimpleBumpState";
+	t1:memberOfRepository <http://www.servicerobotik-ulm.de/DomainModels/CommBasicObjects>;
+.
+
 
 ##### Service Definitions
 # see https://robmosys.eu/wiki/modeling:metamodels:service 
@@ -667,6 +673,20 @@
 		a robmosys:SendPattern;
 		# FIXME: check the namespace: it will be wrong when elements from other repos are used.
 		t1:dataType :CommSkillMsg;
+	];
+.
+
+:SimpleBumperService a robmosys:ServiceDefinition;
+	rdf:type rdfs:Class;
+	rdf:type sh:NodeShape;
+	rdfs:subClassOf robmosys:AbstractService;
+	rdfs:label "SimpleBumperService";
+	t1:shortDescription "ServiceDefinition SimpleBumperService";
+	t1:memberOfRepository <http://www.servicerobotik-ulm.de/DomainModels/CommBasicObjects>;
+	t1:commPatternUsage [
+		a robmosys:PushPattern;
+		# FIXME: check the namespace: it will be wrong when elements from other repos are used.
+		t1:dataType :SimpleBumpState;
 	];
 .
 

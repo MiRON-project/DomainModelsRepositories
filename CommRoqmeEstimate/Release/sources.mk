@@ -24,6 +24,11 @@ C_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 opcua-backend/src-gen/CommRoqmeEstimateOpcUa \
+smartsoft/build/CMakeFiles/3.14.0/CompilerIdC \
+smartsoft/build/CMakeFiles/3.14.0/CompilerIdCXX \
+smartsoft/build/CMakeFiles/CommRoqmeEstimate.dir/src/CommRoqmeEstimate \
+smartsoft/build/CMakeFiles/CommRoqmeEstimate.dir/src-gen/CommRoqmeEstimate \
+smartsoft/build/CMakeFiles \
 smartsoft/src/CommRoqmeEstimate \
 smartsoft/src-gen/CommRoqmeEstimate \
 
