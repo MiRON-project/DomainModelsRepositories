@@ -10,6 +10,11 @@ RM := rm -rf
 -include sources.mk
 -include smartsoft/src/CommRoqmeEstimate/subdir.mk
 -include smartsoft/src-gen/CommRoqmeEstimate/subdir.mk
+-include smartsoft/build/CMakeFiles/CommRoqmeEstimate.dir/src/CommRoqmeEstimate/subdir.mk
+-include smartsoft/build/CMakeFiles/CommRoqmeEstimate.dir/src-gen/CommRoqmeEstimate/subdir.mk
+-include smartsoft/build/CMakeFiles/3.14.0/CompilerIdCXX/subdir.mk
+-include smartsoft/build/CMakeFiles/3.14.0/CompilerIdC/subdir.mk
+-include smartsoft/build/CMakeFiles/subdir.mk
 -include opcua-backend/src-gen/CommRoqmeEstimateOpcUa/subdir.mk
 -include subdir.mk
 -include objects.mk

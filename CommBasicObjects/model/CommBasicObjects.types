@@ -124,6 +124,12 @@ CommObjectsRepository CommBasicObjects version 1.0.0 {
 		BUMPER_NOT_PRESSED
 		BUMPER_PRESSED
 	}
+	
+	CommObject SimpleBumpState {
+		is_valid: Boolean= false
+		is_bumped: Boolean= false
+	}
+	
 	CommObject CommBumperEventParameter {
 		oldState: BumperEventType
 	}	

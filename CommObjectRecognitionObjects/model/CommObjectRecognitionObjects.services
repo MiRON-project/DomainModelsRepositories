@@ -106,4 +106,35 @@ ServiceDefRepository CommObjectRecognitionObjects version 1.0 {
 			DataType = CommObjectRecognitionObjects.CommPeople
 		>
 	}
+	
+	ForkingServiceDefinition SimplePeoplePushService {
+		PushPattern <
+			DataType = CommObjectRecognitionObjects.SimpleRecognitionState 
+		>
+	} 
+	
+	ForkingServiceDefinition SimpleWantedPeoplePushService {
+		PushPattern <
+			DataType = CommObjectRecognitionObjects.SimpleRecognitionState 
+		>
+	}
+	
+	ForkingServiceDefinition SimpleObjectPushService {
+		PushPattern <
+			DataType = CommObjectRecognitionObjects.SimpleRecognitionState
+		>
+	}
+	
+	ForkingServiceDefinition SimpleObjectBumpPushService {
+		PushPattern <
+			DataType = CommBasicObjects.SimpleBumpState
+		>
+	}
+	
+	ForkingServiceDefinition SimplePeopleBumpPushService {
+		PushPattern <
+			DataType = CommBasicObjects.SimpleBumpState
+		>
+	} 
+
 }
