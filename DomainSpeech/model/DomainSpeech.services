@@ -21,13 +21,26 @@ ServiceDefRepository DomainSpeech version 1.0
 		>
 	}
 	
+	RequestAnswerServiceDefinition ObjectDropQueryService 
+	{
+		QueryPattern <
+		    RequestType=DomainSpeech.CommObjectDropOutputMessage 
+		    AnswerType=CommBasicObjects.CommBool
+		>
+	}
+	
 	CoordinationServiceDefinition SpeechCoordinationService {
 		ParameterPattern < DomainSpeech.SpeechParam >
 		StatePattern < lifecycle ComponentLifecycle with DomainSpeech.MyStates >
 		CommunicationServiceUsage objectplacement uses ObjectPlacementQueryService 
+		CommunicationServiceUsage objectdrop uses ObjectDropQueryService 
 	}
 	
 	ForkingServiceDefinition ObjectPlacementPushService  {
 		PushPattern <DataType=DomainSpeech.CommObjectPlacementOutputMessage >
+	}
+	
+	ForkingServiceDefinition ObjectDropPushService  {
+		PushPattern <DataType=DomainSpeech.CommObjectDropOutputMessage >
 	}
 }

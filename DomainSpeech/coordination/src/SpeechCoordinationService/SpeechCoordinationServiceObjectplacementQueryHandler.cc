@@ -1,8 +1,9 @@
 #include "SpeechCoordinationServiceObjectplacementQueryHandler.hh"
 #include <sstream>
 
-DomainSpeech::CommObjectPlacementOutputMessage SpeechCoordinationServiceObjectplacementQueryHandler::handleRequest(const std::string &inString)
-{
+DomainSpeech::CommObjectPlacementOutputMessage 
+		SpeechCoordinationServiceObjectplacementQueryHandler::handleRequest(
+		const std::string &inString){
 	DomainSpeech::CommObjectPlacementOutputMessage request;
 
 	std::vector<std::string> result;
@@ -50,9 +51,8 @@ DomainSpeech::CommObjectPlacementOutputMessage SpeechCoordinationServiceObjectpl
 	return request;
 }
 
-std::string SpeechCoordinationServiceObjectplacementQueryHandler::handleAnswer(const CommBasicObjects::CommBool &answer)
-{
-
+std::string SpeechCoordinationServiceObjectplacementQueryHandler::handleAnswer(
+		const CommBasicObjects::CommBool &answer){
 	if (answer.getBoolValue())
 		return "SUCCESS";
 	else
