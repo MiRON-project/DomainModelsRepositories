@@ -1,0 +1,13 @@
+SkillDefinitionRepository DomainSpeech {
+	CoordinationModuleDefinition domainSpeechModule {	
+		SkillDefinition objectplacement{
+			in {
+				query : String
+			}
+			results {
+				SUCCESS value = "OK"
+				ERROR value = "0"
+			}
+		}
+	}
+}

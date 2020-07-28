@@ -7,6 +7,27 @@ ServiceDefRepository DomainSpeech version 1.0
 	
 	RequestAnswerServiceDefinition SpeechQueryService 
 	{
-		QueryPattern <RequestType=DomainSpeech.CommSpeechOutputMessage AnswerType=CommBasicObjects.CommPropertySet>
+		QueryPattern <
+		    RequestType=DomainSpeech.CommSpeechOutputMessage 
+		    AnswerType=CommBasicObjects.CommPropertySet
+		>
+	}
+	
+	RequestAnswerServiceDefinition ObjectPlacementQueryService 
+	{
+		QueryPattern <
+		    RequestType=DomainSpeech.CommObjectPlacementOutputMessage 
+		    AnswerType=CommBasicObjects.CommBool
+		>
+	}
+	
+	CoordinationServiceDefinition SpeechCoordinationService {
+		ParameterPattern < DomainSpeech.SpeechParam >
+		StatePattern < lifecycle ComponentLifecycle with DomainSpeech.MyStates >
+		CommunicationServiceUsage objectplacement uses ObjectPlacementQueryService 
+	}
+	
+	ForkingServiceDefinition ObjectPlacementPushService  {
+		PushPattern <DataType=DomainSpeech.CommObjectPlacementOutputMessage >
 	}
 }
