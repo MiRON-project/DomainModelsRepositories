@@ -55,6 +55,11 @@ CommObjectsRepository DomainSpeech version 1.0 {
 	CommObject CommAmbientNoise {
 		noise_level: UInt32
 	}
+	CommObject CommObjectPlacementOutputMessage {
+		objectType: String
+		objectSize: Double[*]
+		objectMass: Double
+	}
 	Enumeration SpeechInputTagType {
 		SPEECH_SET_GRAMMAR
 	}

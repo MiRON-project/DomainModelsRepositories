@@ -15,6 +15,9 @@ SkillDefinitionRepository CommObjectRecognitionObjects {
 		}
 		
 		SkillDefinition getPersonPose {
+			in {
+				personname : String
+			}
 			out {
 				x : Double
 				y : Double
