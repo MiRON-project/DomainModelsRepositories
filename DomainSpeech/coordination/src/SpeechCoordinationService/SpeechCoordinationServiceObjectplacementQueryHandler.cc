@@ -1,24 +1,24 @@
 #include "SpeechCoordinationServiceObjectplacementQueryHandler.hh"
 #include <sstream>
-  
-DomainSpeech::CommObjectPlacementOutputMessage SpeechCoordinationServiceObjectplacementQueryHandler::handleRequest(const std::string& inString){
 
+DomainSpeech::CommObjectPlacementOutputMessage SpeechCoordinationServiceObjectplacementQueryHandler::handleRequest(const std::string &inString)
+{
 	DomainSpeech::CommObjectPlacementOutputMessage request;
-	
+
 	std::vector<std::string> result;
 	std::istringstream iss(inString);
-	while( iss.good() )
+	while (iss.good())
 	{
 		std::string substr;
-		getline( iss, substr, '_' );
-		result.push_back( substr );
+		getline(iss, substr, '_');
+		result.push_back(substr);
 	}
-	
+
 	try
 	{
 		request.setObjectType(result[0]);
 	}
-	catch(const std::exception& e)
+	catch (const std::exception &e)
 	{
 		std::cerr << e.what() << '\n';
 		return request;
@@ -28,31 +28,33 @@ DomainSpeech::CommObjectPlacementOutputMessage SpeechCoordinationServiceObjectpl
 	{
 		request.setObjectMass(std::stod(result[1]));
 	}
-	catch(...)
+	catch (...)
 	{
 		request.setObjectMass(0);
 	}
-	
+
 	std::vector<double> object_sizes;
-	for (size_t i = 2; i < result.size(); ++i) {
+	for (size_t i = 2; i < result.size(); ++i)
+	{
 		try
 		{
 			object_sizes.push_back(std::stod(result[i]));
 		}
-		catch(...)
+		catch (...)
 		{
 			object_sizes.push_back(0.1);
-		}	
+		}
 	}
 	request.setObjectSize(object_sizes);
 
 	return request;
 }
 
-std::string SpeechCoordinationServiceObjectplacementQueryHandler::handleAnswer(const CommBasicObjects::CommBool& answer){
-	
+std::string SpeechCoordinationServiceObjectplacementQueryHandler::handleAnswer(const CommBasicObjects::CommBool &answer)
+{
+
 	if (answer.getBoolValue())
 		return "SUCCESS";
-	else 
+	else
 		return "ERROR";
 }
