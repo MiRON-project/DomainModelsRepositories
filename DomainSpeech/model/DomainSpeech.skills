@@ -9,5 +9,15 @@ SkillDefinitionRepository DomainSpeech {
 				ERROR value = "0"
 			}
 		}
+		
+		SkillDefinition objectdrop{
+			in {
+				obj_index : Int32
+			}
+			results {
+				SUCCESS value = "OK"
+				ERROR value = "0"
+			}
+		}
 	}
 }

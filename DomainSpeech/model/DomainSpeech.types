@@ -60,6 +60,9 @@ CommObjectsRepository DomainSpeech version 1.0 {
 		objectSize: Double[*]
 		objectMass: Double
 	}
+	CommObject CommObjectDropOutputMessage {
+		obj_carried_index: Int32
+	}
 	Enumeration SpeechInputTagType {
 		SPEECH_SET_GRAMMAR
 	}
