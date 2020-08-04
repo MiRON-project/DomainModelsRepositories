@@ -67,7 +67,7 @@ CommObjectsRepository CommNavigationObjects version 1.0.0 {
 		yGoalPoint: Double
 		hGoalPoint: Double
 	}
-	CommObject CommPlannerGoals {
+	CommObject CommWaypoints {
 		goals: CommPlannerGoal[*]
 	}
 	CommObject CommGridMapRequest {

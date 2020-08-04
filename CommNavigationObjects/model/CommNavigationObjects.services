@@ -51,8 +51,8 @@ ServiceDefRepository CommNavigationObjects version 1.0
 		PushPattern < DataType = CommNavigationObjects.CommPlannerGoal >
 	}
 	
-	ForkingServiceDefinition PlannerGoalsService {
-		PushPattern < DataType = CommNavigationObjects.CommPlannerGoals >
+	ForkingServiceDefinition PlannerWaypointsService {
+		PushPattern < DataType = CommNavigationObjects.CommWaypoints >
 	}
 	
 	ForkingServiceDefinition ObstaclesService {

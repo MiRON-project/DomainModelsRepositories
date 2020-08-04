@@ -136,9 +136,9 @@
 	t1:memberOfRepository <http://www.servicerobotik-ulm.de/DomainModels/CommNavigationObjects>;
 .
 
-:CommPlannerGoals a robmosys:CommunicationObject;
-	rdfs:label "CommPlannerGoals";
-	t1:shortDescription "CommunicationObject CommPlannerGoals";
+:CommWaypoints a robmosys:CommunicationObject;
+	rdfs:label "CommWaypoints";
+	t1:shortDescription "CommunicationObject CommWaypoints";
 	t1:memberOfRepository <http://www.servicerobotik-ulm.de/DomainModels/CommNavigationObjects>;
 .
 
@@ -315,17 +315,17 @@
 	];
 .
 
-:PlannerGoalsService a robmosys:ServiceDefinition;
+:PlannerWaypointsService a robmosys:ServiceDefinition;
 	rdf:type rdfs:Class;
 	rdf:type sh:NodeShape;
 	rdfs:subClassOf robmosys:AbstractService;
-	rdfs:label "PlannerGoalsService";
-	t1:shortDescription "ServiceDefinition PlannerGoalsService";
+	rdfs:label "PlannerWaypointsService";
+	t1:shortDescription "ServiceDefinition PlannerWaypointsService";
 	t1:memberOfRepository <http://www.servicerobotik-ulm.de/DomainModels/CommNavigationObjects>;
 	t1:commPatternUsage [
 		a robmosys:PushPattern;
 		# FIXME: check the namespace: it will be wrong when elements from other repos are used.
-		t1:dataType :CommPlannerGoals;
+		t1:dataType :CommWaypoints;
 	];
 .
 

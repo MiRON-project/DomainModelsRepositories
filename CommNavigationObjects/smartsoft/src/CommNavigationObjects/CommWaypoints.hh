@@ -14,17 +14,17 @@
 // If you want the toolchain to re-generate this file, please 
 // delete it before running the code generator.
 //--------------------------------------------------------------------------
-#ifndef COMMNAVIGATIONOBJECTS_COMMPLANNERGOALS_H_
-#define COMMNAVIGATIONOBJECTS_COMMPLANNERGOALS_H_
+#ifndef COMMNAVIGATIONOBJECTS_COMMWAYPOINTS_H_
+#define COMMNAVIGATIONOBJECTS_COMMWAYPOINTS_H_
 
-#include "CommNavigationObjects/CommPlannerGoalsCore.hh"
+#include "CommNavigationObjects/CommWaypointsCore.hh"
 
 namespace CommNavigationObjects {
 		
-class CommPlannerGoals : public CommPlannerGoalsCore {
+class CommWaypoints : public CommWaypointsCore {
 	public:
 		// default constructors
-		CommPlannerGoals();
+		CommWaypoints();
 		
 		/**
 		 * Constructor to set all values.
@@ -35,26 +35,26 @@ class CommPlannerGoals : public CommPlannerGoalsCore {
 		 *      CommRepository::MyCommObject obj;
 		 *      obj.setX(1).setY(2).setZ(3)...;
 		 */
-		// CommPlannerGoals(const std::vector<CommNavigationObjects::CommPlannerGoal> &goals);
+		// CommWaypoints(const std::vector<CommNavigationObjects::CommPlannerGoal> &goals);
 		
-		CommPlannerGoals(const CommPlannerGoalsCore &commPlannerGoals);
-		CommPlannerGoals(const DATATYPE &commPlannerGoals);
-		virtual ~CommPlannerGoals();
+		CommWaypoints(const CommWaypointsCore &commWaypoints);
+		CommWaypoints(const DATATYPE &commWaypoints);
+		virtual ~CommWaypoints();
 		
 		// use framework specific getter and setter methods from core (base) class
-		using CommPlannerGoalsCore::get;
-		using CommPlannerGoalsCore::set;
+		using CommWaypointsCore::get;
+		using CommWaypointsCore::set;
 		
 		//
 		// feel free to add customized methods here
 		//
 };
 
-inline std::ostream &operator<<(std::ostream &os, const CommPlannerGoals &co)
+inline std::ostream &operator<<(std::ostream &os, const CommWaypoints &co)
 {
 	co.to_ostream(os);
 	return os;
 }
 	
 } /* namespace CommNavigationObjects */
-#endif /* COMMNAVIGATIONOBJECTS_COMMPLANNERGOALS_H_ */
+#endif /* COMMNAVIGATIONOBJECTS_COMMWAYPOINTS_H_ */

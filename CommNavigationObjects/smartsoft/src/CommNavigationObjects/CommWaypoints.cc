@@ -15,12 +15,12 @@
 // delete it before running the code generator.
 //--------------------------------------------------------------------------
 
-#include "CommNavigationObjects/CommPlannerGoals.hh"
+#include "CommNavigationObjects/CommWaypoints.hh"
 
 using namespace CommNavigationObjects;
 
-CommPlannerGoals::CommPlannerGoals()
-:	CommPlannerGoalsCore()
+CommWaypoints::CommWaypoints()
+:	CommWaypointsCore()
 {  }
 
 
@@ -32,20 +32,20 @@ CommPlannerGoals::CommPlannerGoals()
  * The preferred way to set values for initialization is:
  *      CommRepository::MyCommObject obj;
  *      obj.setX(1).setY(2).setZ(3)...;
-CommPlannerGoals::CommPlannerGoals(const std::vector<CommNavigationObjects::CommPlannerGoal> &goals)
-:	CommPlannerGoalsCore() // base constructor sets default values as defined in the model
+CommWaypoints::CommWaypoints(const std::vector<CommNavigationObjects::CommPlannerGoal> &goals)
+:	CommWaypointsCore() // base constructor sets default values as defined in the model
 {
 	setGoals(goals);
 }
  */
 
-CommPlannerGoals::CommPlannerGoals(const CommPlannerGoalsCore &commPlannerGoals)
-:	CommPlannerGoalsCore(commPlannerGoals)
+CommWaypoints::CommWaypoints(const CommWaypointsCore &commWaypoints)
+:	CommWaypointsCore(commWaypoints)
 {  }
 
-CommPlannerGoals::CommPlannerGoals(const DATATYPE &commPlannerGoals)
-:	CommPlannerGoalsCore(commPlannerGoals)
+CommWaypoints::CommWaypoints(const DATATYPE &commWaypoints)
+:	CommWaypointsCore(commWaypoints)
 {  }
 
-CommPlannerGoals::~CommPlannerGoals()
+CommWaypoints::~CommWaypoints()
 {  }
