@@ -17,11 +17,12 @@ CommNavigationObjects::CommPlannerGoal GlobalPlannerCoordinationServicePlannerqu
 std::string GlobalPlannerCoordinationServicePlannerqueryQueryHandler::handleAnswer(const CommNavigationObjects::CommWaypoints& answer){
 	auto goals = answer.getGoalsCopy();
 	std::ostringstream ss;
-	ss << "((";
+	ss << "(";
+	ss << goals.size() << " ";	
+	ss << "(";
 	ss << std::fixed << std::setprecision(2);
 	for (auto& goal : goals) 
 		ss << goal.getXGoalPoint() << " " << goal.getYGoalPoint() << " ";
-	ss << ") ";
-	ss << goals.size() << ")";	
+	ss << "))";
 	return ss.str();
 }
