@@ -50,6 +50,21 @@ ServiceDefRepository CommNavigationObjects version 1.0
 	ForkingServiceDefinition PlannerGoalService {
 		PushPattern < DataType = CommNavigationObjects.CommPlannerGoal >
 	}
+	
+	ForkingServiceDefinition PlannerWaypointsService {
+		PushPattern < DataType = CommNavigationObjects.CommWaypoints >
+	}
+	
+	RequestAnswerServiceDefinition PlannerWaypointsQueryService {
+		QueryPattern <
+			RequestType=CommNavigationObjects.CommPlannerGoal 
+			AnswerType=CommNavigationObjects.CommWaypoints
+			>
+	}
+	
+	ForkingServiceDefinition ObstaclesService {
+		PushPattern < DataType = CommNavigationObjects.BoundingBoxes >
+	}
 
 	ForkingServiceDefinition PlannerEventService {
 		EventPattern <
@@ -126,6 +141,12 @@ ServiceDefRepository CommNavigationObjects version 1.0
 		StatePattern < lifecycle ComponentLifecycle with CommNavigationObjects.PathPlannerStates>
 		ParameterPattern < CommNavigationObjects.PlannerParams>
 		CommunicationServiceUsage plannerEvent uses PlannerEventService
+	}
+	
+	CoordinationServiceDefinition GlobalPlannerCoordinationService {
+		StatePattern < lifecycle ComponentLifecycle with CommBasicObjects.BasicModes >
+		ParameterPattern < EmptyDefaultParameterSet >
+		CommunicationServiceUsage plannerquery uses PlannerWaypointsQueryService
 	}
 
 }

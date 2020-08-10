@@ -29,7 +29,25 @@ SkillDefinitionRepository CommNavigationObjects {
 		}
 	}
 
-
+	CoordinationModuleDefinition NavigationModule2 {
+		// ///////////////////////////////////////////
+		// Global Planner
+		
+		SkillDefinition pathPlanner{
+			in {
+				x : Double
+				y : Double	
+			} 
+			out {
+				waypoints : String
+				number_of_waypoints : Int32
+			}
+			results {
+				ERROR value = "OBSTACLE";
+				SUCCESS value = "OK";
+			}
+		}
+	}
 
 	CoordinationModuleDefinition NavigationModule {
 
@@ -67,7 +85,6 @@ SkillDefinitionRepository CommNavigationObjects {
 				SUCCESS value = "OK"
 			}
 		}
-		
 		
 		// ///////////////////////////////////////////
 		// MOVE ROBOT 

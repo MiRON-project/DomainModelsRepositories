@@ -67,6 +67,9 @@ CommObjectsRepository CommNavigationObjects version 1.0.0 {
 		yGoalPoint: Double
 		hGoalPoint: Double
 	}
+	CommObject CommWaypoints {
+		goals: CommPlannerGoal[*]
+	}
 	CommObject CommGridMapRequest {
 		id: UInt32
 		xOffsetMM: Int32
@@ -213,6 +216,20 @@ CommObjectsRepository CommNavigationObjects version 1.0.0 {
 		isValid: Boolean = false
 		vertices : CommNavigationTopologyPart[*]
 		edges : CommNavigationTopologyConnection[*] 
+	}
+	
+	CommObject BoundingBox {
+		xmin : Double
+		ymin : Double
+		zmin : Double
+		xmax : Double
+		ymax : Double
+		zmax : Double
+	}
+	
+	CommObject BoundingBoxes {
+		floor : BoundingBox
+		boxes : BoundingBox[*]
 	}
 
 }
