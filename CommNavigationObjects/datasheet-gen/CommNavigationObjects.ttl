@@ -315,6 +315,21 @@
 	];
 .
 
+:PlannerWaypointsQueryService a robmosys:ServiceDefinition;
+	rdf:type rdfs:Class;
+	rdf:type sh:NodeShape;
+	rdfs:subClassOf robmosys:AbstractService;
+	rdfs:label "PlannerWaypointsQueryService";
+	t1:shortDescription "ServiceDefinition PlannerWaypointsQueryService";
+	t1:memberOfRepository <http://www.servicerobotik-ulm.de/DomainModels/CommNavigationObjects>;
+	t1:commPatternUsage [
+		a robmosys:QueryPattern;
+		# FIXME: check the namespace: it will be wrong when elements from other repos are used.
+		t1:requestType :CommPlannerGoal;
+		t1:answerType :CommWaypoints;
+	];
+.
+
 :PlannerWaypointsService a robmosys:ServiceDefinition;
 	rdf:type rdfs:Class;
 	rdf:type sh:NodeShape;
