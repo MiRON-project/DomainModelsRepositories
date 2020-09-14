@@ -189,4 +189,8 @@ ServiceDefRepository CommBasicObjects version 1.0
 		PushPattern<DataType=CommBasicObjects.CommMobileUltrasonicScan>
 	}
 	
+	ForkingServiceDefinition PayloadService {
+		PushPattern<DataType=CommBasicObjects.RobotPayload>
+	}
+	
 }
