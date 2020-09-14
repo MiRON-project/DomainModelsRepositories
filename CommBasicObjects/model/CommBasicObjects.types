@@ -379,4 +379,8 @@ CommObjectsRepository CommBasicObjects version 1.0.0 {
 		yellow: Boolean
 		green: Boolean
 	}
+	
+	CommObject RobotPayload {
+		mass : Double
+	}
 }
