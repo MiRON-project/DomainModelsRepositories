@@ -382,5 +382,6 @@ CommObjectsRepository CommBasicObjects version 1.0.0 {
 	
 	CommObject RobotPayload {
 		mass : Double
+		number_of_items : UInt32
 	}
 }
