@@ -231,5 +231,10 @@ CommObjectsRepository CommNavigationObjects version 1.0.0 {
 		floor : BoundingBox
 		boxes : BoundingBox[*]
 	}
+	
+	CommObject DistanceToGoal {
+		l1 : Double
+		l2 : Double
+	}
 
 }

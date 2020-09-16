@@ -73,6 +73,10 @@ ServiceDefRepository CommNavigationObjects version 1.0
 			EventStateType=CommNavigationObjects.PlannerEventState
 		>
 	}
+	
+	ForkingServiceDefinition DistanceToGoalService {
+		PushPattern < DataType = CommNavigationObjects.DistanceToGoal >
+	}
 
 	/**
 	 * Mapping service-definitions
